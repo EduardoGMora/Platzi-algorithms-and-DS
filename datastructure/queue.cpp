@@ -43,9 +43,13 @@ void queue::enQueue( int value){
 
 int queue::deQueue(){
     // if arr is empty
-    if (front == -1)
+    int temp = -1;
+    if (front == -1){
         cout << "Queue is empty" << endl;
+        return temp;
+    }
     else{
+        temp = arr[front];
         for (int i = 0; i < rear; i++)
             arr[i] = arr[i + 1];
 
@@ -53,9 +57,9 @@ int queue::deQueue(){
 
         if (front > rear)
             front = rear = -1;
-    }
 
-    return arr[front];
+    }
+    return temp;
 }
 
 void queue::display(){
@@ -74,6 +78,8 @@ queue::~queue() {}
 int main(){
     queue q;
     q.enQueue(1);
+    cout<<"\nDeleted " << q.deQueue()<<endl;
+    q.deQueue();
     q.enQueue(3);
     q.enQueue(2);
     q.enQueue(4);
