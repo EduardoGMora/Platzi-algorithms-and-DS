@@ -1,6 +1,4 @@
 #include <iostream>
-#include <cstring>
-#include <math.h>
 
 using namespace std;
 
@@ -22,6 +20,7 @@ void insertionSort(int arr[], int n){
             arr[j+1] = arr[j];
             j = j-1;
         }
+        arr[j+1] = currentvalue;
     }
         
 }
