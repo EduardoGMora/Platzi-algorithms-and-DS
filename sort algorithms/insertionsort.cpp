@@ -11,7 +11,12 @@ int print(int arr[], int n){
 }
 
 void insertionSort(int arr[], int n){
+    if (n <= 1){
+        return;
+    }
+    
     int currentvalue, i, j;
+
     for(i=1; i<n; i++){
         currentvalue = arr[i];
         j = i-1;
