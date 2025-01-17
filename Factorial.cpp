@@ -1,34 +1,33 @@
 #include <iostream>
+#include <limits>
 
 using namespace std;
 
-int factRecursive(int n){
-    if(n==0)
-        return (1);
-
-    return n*factRecursive(n-1);
-}
-
-int factIterative(int n){
-    for(int i = n-1; i > 0; i--){
-        n *= i;
-    }
-    return n;
+unsigned long long factRecursive(int n){
+    return (n == 0 || n == 1) ? 1 : n * factRecursive(n - 1);
 }
 
 int main(){
     // type a number
     int n;
-    cin>>n;
+    while (true)
+    {
+        cout << "Type a number: ";
+        cin >> n;
 
+        if(cin.fail() < 0){
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            cout << "Invalid input. Please enter a valid number." << endl;
+        }
+        else
+            break;
+    }
+    
     // print the number
-    cout<<"This is the number -> "<<n<<endl;
-
-    // print the factorial of the number recursively
-    cout<<"This is the factorial -> "<<factRecursive(n)<<endl;
-
-    // print the factorial of the number iteratively
-    cout<<"This is the factorial -> "<<factIterative(n)<<endl;
+    cout << "This is the number -> " << n << endl;
+    cout << "This is the factorial -> " << factRecursive(n) << endl;
+    // cout << "This is the factorial -> " << factIterative(n) << endl;
 
     return 0;
 }
