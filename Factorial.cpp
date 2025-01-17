@@ -15,7 +15,7 @@ int main(){
         cout << "Type a number: ";
         cin >> n;
 
-        if(cin.fail() < 0){
+        if(cin.fail() || n < 0 || n > 60){
             cin.clear();
             cin.ignore(numeric_limits<streamsize>::max(), '\n');
             cout << "Invalid input. Please enter a valid number." << endl;
