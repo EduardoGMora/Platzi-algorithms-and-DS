@@ -6,15 +6,15 @@ using namespace std;
 
 class Client
 {
-private:
-    char Name[50];
-    char Id[10];
-    float Credit;
-    char Address[100];
-public:
-    Client(const char *name, const char *id, float credit, const char *address);
-    void printdata() const;
-    ~Client();
+    private:
+        char Name[50];
+        char Id[10];
+        float Credit;
+        char Address[100];
+    public:
+        Client(const char *name, const char *id, float credit, const char *address);
+        void printdata() const;
+        ~Client();
 };
 
 Client::Client(const char *name, const char *id, float credit, const char *address)
